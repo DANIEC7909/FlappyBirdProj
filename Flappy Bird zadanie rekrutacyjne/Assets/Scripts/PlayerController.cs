@@ -48,13 +48,24 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("single tap");
                 taps = 0;
                 timer = model.doubleClickTime;
-            }else if (timer > 0 &&taps>1)
+            }
+            else if (timer > 0 &&taps>1)
             {
                 Debug.Log("double tap");
-        Collider2D col=Physics2D.OverlapBox(transform.position, new Vector2(model.SizeOfArea, model.SizeOfArea),0);
-                if(col.CompareTag("pipeScore")|| col.CompareTag("pipeMistake"))
-                {
-                    col.GetComponent<SimplePipe>().DestroyByBomb();
+                if (bombsCount >0) { 
+                 Collider2D col=Physics2D.OverlapBox(transform.position, new Vector2(model.SizeOfArea, model.SizeOfArea),0);
+                    if (col != null)
+                    {
+                        Debug.Log("colider is :" + col.transform.name);
+                        if (col.CompareTag("pipeScore"))
+                        {
+                            col.GetComponent<SimplePipe>().DestroyByBomb();
+                        }
+                        else if (col.CompareTag("pipeMistake"))
+                        {
+                            col.transform.GetComponentInParent<SimplePipe>().DestroyByBomb();
+                        }
+                    }
                 }
                 taps = 0;
             } 

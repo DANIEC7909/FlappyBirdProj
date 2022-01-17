@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     {
         ThisRunPoints++;
         counter++;
-        Debug.Log("PlayerScored: "+ThisRunPoints);
+       
     }
 
     void Update()
@@ -39,7 +39,10 @@ public class GameManager : MonoBehaviour
             counter = 0;
             player.bombsCount++;
         }
-
+        if (player.bombsCount > 3)
+        {
+            player.bombsCount = 3;
+        }
         points.text = ThisRunPoints.ToString();
         bombs.text = player.bombsCount.ToString();
     }
