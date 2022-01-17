@@ -21,56 +21,70 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb=GetComponent<Rigidbody2D>();
-      
     }
     private void Start()
     {
         _PlayerAlive = true;
+       
     }
     public void Move()
     {
-        rb.velocity = Vector2.up * model.ForceMultiplayerUp ;
-        taps++;
+        if (GameManager._StartGame)
+        {
+            rb.velocity = Vector2.up * model.ForceMultiplayerUp;
+            taps++;
+        }
     }
     private void FixedUpdate()
     {
-    transform.position += Vector3.right * model.ForceMultiplayerTowards * Time.deltaTime;
-        
+        if (GameManager._StartGame)
+        {
+            transform.position += Vector3.right * model.ForceMultiplayerTowards * Time.deltaTime;
+        }
     }
     private void Update()
     {
-        #region DoubleTap stuff and bomb
-        if (taps > 0)
+        if (GameManager._StartGame)
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
+            if (rb.bodyType == RigidbodyType2D.Static)
             {
-                Debug.Log("single tap");
-                taps = 0;
-                timer = model.doubleClickTime;
+                rb.bodyType = RigidbodyType2D.Dynamic;
             }
-            else if (timer > 0 &&taps>1)
+
+            #region DoubleTap stuff and bomb
+            if (taps > 0)
             {
-                Debug.Log("double tap");
-                if (bombsCount >0) { 
-                 Collider2D col=Physics2D.OverlapBox(transform.position, new Vector2(model.SizeOfArea, model.SizeOfArea),0);
-                    if (col != null)
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                    Debug.Log("single tap");
+                    taps = 0;
+                    timer = model.doubleClickTime;
+                }
+                else if (timer > 0 && taps > 1)
+                {
+                    Debug.Log("double tap");
+                    if (bombsCount > 0)
                     {
-                        Debug.Log("colider is :" + col.transform.name);
-                        if (col.CompareTag("pipeScore"))
+                        Collider2D col = Physics2D.OverlapBox(transform.position, new Vector2(model.SizeOfArea, model.SizeOfArea), 0);
+                        if (col != null)
                         {
-                            col.GetComponent<SimplePipe>().DestroyByBomb();
-                        }
-                        else if (col.CompareTag("pipeMistake"))
-                        {
-                            col.transform.GetComponentInParent<SimplePipe>().DestroyByBomb();
+                            Debug.Log("colider is :" + col.transform.name);
+                            if (col.CompareTag("pipeScore"))
+                            {
+                                col.GetComponent<SimplePipe>().DestroyByBomb();
+                            }
+                            else if (col.CompareTag("pipeMistake"))
+                            {
+                                col.transform.GetComponentInParent<SimplePipe>().DestroyByBomb();
+                            }
                         }
                     }
+                    taps = 0;
                 }
-                taps = 0;
-            } 
+            }
+            #endregion
         }
-        #endregion
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

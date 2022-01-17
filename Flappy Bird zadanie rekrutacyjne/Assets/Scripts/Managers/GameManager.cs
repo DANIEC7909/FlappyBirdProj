@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI bombs;
     [SerializeField] GameObject WhilePlayingObjectUI;
 
+    public static bool _StartGame;
     #region GameOverVars
     [SerializeField]GameObject GameOverObjectUI;
     #endregion
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     {
         ThisRunPoints = 0;
         player.OnPlayerScored += Player_OnPlayerScored;
+        _StartGame = false;
     }
 
     private void Player_OnPlayerScored()
@@ -35,16 +37,16 @@ public class GameManager : MonoBehaviour
         if (!PlayerController._PlayerAlive)
         {
             //game failed 
-            WhilePlayingObjectUI.SetActive(false);
-            GameOverObjectUI.SetActive(false);
-            SceneManager.LoadScene(0);    //<temp
+            if (WhilePlayingObjectUI.active == true) WhilePlayingObjectUI.SetActive(false);
+           if(GameOverObjectUI.active==false) GameOverObjectUI.SetActive(true);
+     //       SceneManager.LoadScene(0);    //<temp
 
             //save points etc.
 
         }
         else
         {
-            WhilePlayingObjectUI.SetActive(true);
+            if (WhilePlayingObjectUI.active == false) WhilePlayingObjectUI.SetActive(true);
         }
         if (counter >= 10)
         {
@@ -61,6 +63,10 @@ public class GameManager : MonoBehaviour
     }
    public void PlayAgain()
     {
-
+        SceneManager.LoadScene(0);
+    }
+    public void StartGame()
+    {
+        _StartGame = true;
     }
 }
