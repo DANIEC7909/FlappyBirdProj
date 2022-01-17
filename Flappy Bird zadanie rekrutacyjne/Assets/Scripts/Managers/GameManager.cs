@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour
         player.OnPlayerScored += Player_OnPlayerScored;
         _StartGame = false;
         HighScores = new List<int>();
-        nonHighScores = HighScores;
     }
 
     private void Player_OnPlayerScored()
@@ -40,36 +39,34 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        nonHighScores = HighScores;
+        if (HighScores.Count >= 1) highestPointsUGUI[0].text = HighScores[0].ToString();
+        if (HighScores.Count >= 2) highestPointsUGUI[1].text = HighScores[1].ToString();
+        if (HighScores.Count >= 3) highestPointsUGUI[2].text = HighScores[2].ToString();
+        if (HighScores.Count >= 4) highestPointsUGUI[3].text = HighScores[3].ToString();
+        if (HighScores.Count >= 5) highestPointsUGUI[4].text = HighScores[4].ToString();
         if (!PlayerController._PlayerAlive)
         {
             if (WhilePlayingObjectUI.active == true) WhilePlayingObjectUI.SetActive(false);
            if(GameOverObjectUI.active==false) GameOverObjectUI.SetActive(true);
          
            
-            if (HighScores.Count < 5 &&!HighScores.Contains(ThisRunPoints))
+            if( !HighScores.Contains(ThisRunPoints))
             {
-                    HighScores.Add(ThisRunPoints);
-              
-                if (HighScores.Count >= 1) highestPointsUGUI[0].text = HighScores[0].ToString();
-                if (HighScores.Count >= 2) highestPointsUGUI[1].text = HighScores[1].ToString();
-                if (HighScores.Count >= 3) highestPointsUGUI[2].text = HighScores[2].ToString();
-                if (HighScores.Count >= 4) highestPointsUGUI[3].text = HighScores[3].ToString();
-                if (HighScores.Count >= 5) highestPointsUGUI[4].text = HighScores[4].ToString();
-              
-            }
-            else if(HighScores.Count > 5 && !HighScores.Contains(ThisRunPoints))
-            {
-                if (ThisRunPoints >HighScores.Max())//add only when points from run is > than max value in list
+                if (HighScores.Count >= 5) { 
+                    HighScores.Remove(HighScores.Min());
+                    Debug.Log("count " + HighScores.Count);
+                    if (ThisRunPoints > HighScores.Max())//add only when points from run is > than max value in list
+                    {
+                        HighScores.Add(ThisRunPoints);
+
+                       
+                    }
+                }
+                else
                 {
                     HighScores.Add(ThisRunPoints);
 
-                    if (HighScores.Count >= 1) highestPointsUGUI[0].text = HighScores[0].ToString();
-                    if (HighScores.Count >= 2) highestPointsUGUI[1].text = HighScores[1].ToString();
-                    if (HighScores.Count >= 3) highestPointsUGUI[2].text = HighScores[2].ToString();
-                    if (HighScores.Count >= 4) highestPointsUGUI[3].text = HighScores[3].ToString();
-                    if (HighScores.Count >= 5) highestPointsUGUI[4].text = HighScores[4].ToString();
-
-                //HighScores.Remove(HighScores.Min());
                 }
             }
          
