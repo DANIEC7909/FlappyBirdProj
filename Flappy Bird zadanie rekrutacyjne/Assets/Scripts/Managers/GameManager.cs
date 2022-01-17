@@ -8,8 +8,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerController player;
     public  int ThisRunPoints;
     int counter;
-    public TextMeshProUGUI points;
-    public TextMeshProUGUI bombs;
+    [SerializeField] TextMeshProUGUI points;
+    [SerializeField] TextMeshProUGUI endPoints;
+    [SerializeField] TextMeshProUGUI bombs;
+    [SerializeField] GameObject WhilePlayingObjectUI;
+
+    #region GameOverVars
+    [SerializeField]GameObject GameOverObjectUI;
+    #endregion
+
     private void Start()
     {
         ThisRunPoints = 0;
@@ -27,12 +34,17 @@ public class GameManager : MonoBehaviour
     {
         if (!PlayerController._PlayerAlive)
         {
-        
-            SceneManager.LoadScene(0);    //<temp
             //game failed 
+            WhilePlayingObjectUI.SetActive(false);
+            GameOverObjectUI.SetActive(false);
+            SceneManager.LoadScene(0);    //<temp
 
             //save points etc.
 
+        }
+        else
+        {
+            WhilePlayingObjectUI.SetActive(true);
         }
         if (counter >= 10)
         {
@@ -44,6 +56,11 @@ public class GameManager : MonoBehaviour
             player.bombsCount = 3;
         }
         points.text = ThisRunPoints.ToString();
+        endPoints.text = ThisRunPoints.ToString();
         bombs.text = player.bombsCount.ToString();
+    }
+   public void PlayAgain()
+    {
+
     }
 }
