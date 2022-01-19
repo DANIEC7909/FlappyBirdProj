@@ -11,11 +11,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI points;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  
+=======
+    [SerializeField] TextMeshProUGUI[] highestPointsUGUI= new TextMeshProUGUI[5];
+>>>>>>> parent of 025f7aa (Update GameManager.cs)
     [SerializeField] TextMeshProUGUI endPoints;
     [SerializeField] TextMeshProUGUI bombs;
     [SerializeField] GameObject WhilePlayingObjectUI;
-  
+    [SerializeField] static List<int> HighScores;
+    [SerializeField] List<int>nonHighScores;
   
 =======
     [SerializeField] TextMeshProUGUI endPoints;
@@ -41,11 +46,15 @@ public class GameManager : MonoBehaviour
         _StartGame = false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      
 =======
 >>>>>>> parent of 63a124a (poprawki)
 =======
 >>>>>>> parent of 63a124a (poprawki)
+=======
+        HighScores = new List<int>();
+>>>>>>> parent of 025f7aa (Update GameManager.cs)
     }
 
     private void Player_OnPlayerScored()
@@ -57,11 +66,17 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-       
+        nonHighScores = HighScores;
+        if (HighScores.Count >= 1) highestPointsUGUI[0].text = HighScores[0].ToString();
+        if (HighScores.Count >= 2) highestPointsUGUI[1].text = HighScores[1].ToString();
+        if (HighScores.Count >= 3) highestPointsUGUI[2].text = HighScores[2].ToString();
+        if (HighScores.Count >= 4) highestPointsUGUI[3].text = HighScores[3].ToString();
+        if (HighScores.Count >= 5) highestPointsUGUI[4].text = HighScores[4].ToString();
         if (!PlayerController._PlayerAlive)
         {
             //game failed 
             if (WhilePlayingObjectUI.active == true) WhilePlayingObjectUI.SetActive(false);
+<<<<<<< HEAD
 <<<<<<< HEAD
             if(GameOverObjectUI.active  == false) GameOverObjectUI.SetActive(true);
 =======
@@ -71,6 +86,33 @@ public class GameManager : MonoBehaviour
             //save points etc.
 
 >>>>>>> parent of 63a124a (poprawki)
+=======
+           if(GameOverObjectUI.active==false) GameOverObjectUI.SetActive(true);
+         
+           
+            if( !HighScores.Contains(ThisRunPoints))
+            {
+                if (HighScores.Count >= 5) { 
+                    HighScores.Remove(HighScores.Min());
+                    Debug.Log("count " + HighScores.Count);
+                    if (ThisRunPoints > HighScores.Max())//add only when points from run is > than max value in list
+                    {
+                        HighScores.Add(ThisRunPoints);
+
+                       
+                    }
+                }
+                else
+                {
+                    HighScores.Add(ThisRunPoints);
+
+                }
+            }
+         
+          
+
+
+>>>>>>> parent of 025f7aa (Update GameManager.cs)
         }
         else
         {
