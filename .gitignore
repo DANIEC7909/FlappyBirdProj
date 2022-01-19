@@ -35,4 +35,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-Flappy Bird zadanie rekrutacyjne/Logs/AssetImportWorker0.log
+*.log

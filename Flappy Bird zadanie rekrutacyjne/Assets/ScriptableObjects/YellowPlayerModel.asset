@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693ec17ddc670f04fa4629338f6b45a2, type: 3}
   m_Name: YellowPlayerModel
   m_EditorClassIdentifier: 
-  ForceMultiplayerUp: 3
-  ForceMultiplayerTowards: 2
-  SizeOfArea: 4.42
-  doubleClickTime: 1
+  ForceMultiplayerUp: 500
+  ForceMultiplayerTowards: 10
