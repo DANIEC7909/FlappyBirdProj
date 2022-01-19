@@ -15,11 +15,11 @@ C:/Users/Piotr/Desktop/ZADANIE REKRUTACYJNE CHERRYPICk/Zadanko-Rekrutacyjne-Cher
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-64158
+60174
 Successfully changed project path to: C:/Users/Piotr/Desktop/ZADANIE REKRUTACYJNE CHERRYPICk/Zadanko-Rekrutacyjne-Cherrypick/Flappy Bird zadanie rekrutacyjne
 C:/Users/Piotr/Desktop/ZADANIE REKRUTACYJNE CHERRYPICk/Zadanko-Rekrutacyjne-Cherrypick/Flappy Bird zadanie rekrutacyjne
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 104.28 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 134.92 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.25f1 (9b9180224418)
 [Subsystems] Discovering subsystems at path D:/2020.3.25f1/Editor/Data/Resources/UnitySubsystems
@@ -35,106 +35,89 @@ Initialize mono
 Mono path[0] = 'D:/2020.3.25f1/Editor/Data/Managed'
 Mono path[1] = 'D:/2020.3.25f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/2020.3.25f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56128
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56532
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/2020.3.25f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.081377 seconds.
+Registered in 0.002291 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 83.48 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 120.10 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.258 seconds
+- Completed reload, in  1.376 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2258ms)
-		BeginReloadAssembly (121ms)
+	ReloadAssembly (1376ms)
+		BeginReloadAssembly (133ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (4ms)
-		EndReloadAssembly (1865ms)
-			LoadAssemblies (124ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (1083ms)
+			LoadAssemblies (132ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (736ms)
+			SetupTypeCache (394ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (77ms)
-			SetupLoadedEditorAssemblies (694ms)
+			RebuildScriptCaches (66ms)
+			SetupLoadedEditorAssemblies (399ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
+				InitializePlatformSupportModulesInManaged (11ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (84ms)
-				BeforeProcessingInitializeOnLoad (159ms)
-				ProcessInitializeOnLoadAttributes (221ms)
-				ProcessInitializeOnLoadMethodAttributes (221ms)
-				AfterProcessingInitializeOnLoad (1ms)
-				EditorAssembliesLoaded (1ms)
+				RefreshPlugins (120ms)
+				BeforeProcessingInitializeOnLoad (32ms)
+				ProcessInitializeOnLoadAttributes (175ms)
+				ProcessInitializeOnLoadMethodAttributes (60ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 2.489095 seconds.
+Registered in 0.075473 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.82 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 91.18 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.743 seconds
+- Completed reload, in  2.656 seconds
 Domain Reload Profiling:
-	ReloadAssembly (5747ms)
-		BeginReloadAssembly (628ms)
+	ReloadAssembly (2657ms)
+		BeginReloadAssembly (374ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (22ms)
+			DisableScriptedObjects (12ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (57ms)
-		EndReloadAssembly (4823ms)
-			LoadAssemblies (1003ms)
-			RebuildTransferFunctionScriptingTraits (1ms)
-			SetupTypeCache (1881ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (279ms)
-			SetupLoadedEditorAssemblies (1197ms)
+			CreateAndSetChildDomain (52ms)
+		EndReloadAssembly (2141ms)
+			LoadAssemblies (223ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (746ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (105ms)
+			SetupLoadedEditorAssemblies (834ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (250ms)
-				ProcessInitializeOnLoadAttributes (790ms)
-				ProcessInitializeOnLoadMethodAttributes (128ms)
-				AfterProcessingInitializeOnLoad (13ms)
-				EditorAssembliesLoaded (1ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (91ms)
+				BeforeProcessingInitializeOnLoad (267ms)
+				ProcessInitializeOnLoadAttributes (396ms)
+				ProcessInitializeOnLoadMethodAttributes (67ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (36ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Trying to reload asset but can't find object on disk
-Trying to reload asset but can't find object on disk
-Trying to reload asset but can't find object on disk
-Trying to reload asset but can't find object on disk
-Trying to reload asset but can't find object on disk
-Trying to reload asset but can't find object on disk
-Trying to reload asset but can't find object on disk
-Trying to reload asset but can't find object on disk
-Trying to reload asset but can't find object on disk
-Trying to reload asset but can't find object on disk
-Trying to reload asset but can't find object on disk
-Trying to reload asset but can't find object on disk
-Trying to reload asset but can't find object on disk
-Trying to reload asset but can't find object on disk
-Trying to reload asset but can't find object on disk
-Trying to reload asset but can't find object on disk
-Trying to reload asset but can't find object on disk
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.66 seconds
-Refreshing native plugins compatible for Editor in 0.83 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.44 seconds
+Refreshing native plugins compatible for Editor in 1.82 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1500 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 67.7 MB.
-System memory in use after: 67.8 MB.
+Unloading 2215 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.2 MB.
+System memory in use after: 99.3 MB.
 
-Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1925.
-Total: 17.421300 ms (FindLiveObjects: 1.301100 ms CreateObjectMapping: 1.322600 ms MarkObjects: 14.644200 ms  DeleteObjects: 0.150600 ms)
+Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 2651.
+Total: 6.606500 ms (FindLiveObjects: 0.373700 ms CreateObjectMapping: 0.139200 ms MarkObjects: 6.044600 ms  DeleteObjects: 0.046800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -148,55 +131,256 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/ScriptableObjects/YellowPlayerModel.asset
-  artifactKey: Guid(4f59c952874214c4ba520d54c9aa5648) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObjects/YellowPlayerModel.asset using Guid(4f59c952874214c4ba520d54c9aa5648) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 10.320883 seconds  code(4) message(Build asset version error: assets/scriptableobjects/yellowplayermodel.asset.meta in SourceAssetDB has modification time of '2022-01-17T23:20:19.6682813Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
-Stacktrace:
-0x00007ff6b6158bdc (Unity) StackWalker::GetCurrentCallstack
-0x00007ff6b615ffd9 (Unity) StackWalker::ShowCallstack
-0x00007ff6b6ebcd9c (Unity) GetStacktrace
-0x00007ff6b70091a7 (Unity) GetAssetHashAndValidate
-0x00007ff6b7004624 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
-0x00007ff6b70024e2 (Unity) AssetVersionBuilder::BuildAssetVersion
-0x00007ff6b6fdcdcd (Unity) CreateAssetVersionBuilder
-0x00007ff6b6fe3605 (Unity) ImportToObjects
-0x00007ff6b6fe2458 (Unity) ImportAsset
-0x00007ff6b6f7c998 (Unity) AssetImportWorker::Import
-0x00007ff6b6fa203a (Unity) <lambda_4a0f5575432e8e69ec585d1ca7897980>::operator()
-0x00007ff6b70295a2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
-0x00007ff6b702b700 (Unity) asio::detail::win_iocp_io_service::do_one
-0x00007ff6b702ee7e (Unity) asio::io_service::run
-0x00007ff6b6fcab9b (Unity) RunAssetImportWorkerClientV2
-0x00007ff6b6fcabf0 (Unity) RunAssetImporterV2
-0x00007ff6b6a723dd (Unity) Application::InitializeProject
-0x00007ff6b6ec7252 (Unity) WinMain
-0x00007ff6b8555752 (Unity) __scrt_common_main_seh
-0x00007ffd8dc07034 (KERNEL32) BaseThreadInitThunk
-0x00007ffd8f142651 (ntdll) RtlUserThreadStart
-)
-  ERROR: Build asset version error: assets/scriptableobjects/yellowplayermodel.asset.meta in SourceAssetDB has modification time of '2022-01-17T23:20:19.6682813Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
-Stacktrace:
-0x00007ff6b6158bdc (Unity) StackWalker::GetCurrentCallstack
-0x00007ff6b615ffd9 (Unity) StackWalker::ShowCallstack
-0x00007ff6b6ebcd9c (Unity) GetStacktrace
-0x00007ff6b70091a7 (Unity) GetAssetHashAndValidate
-0x00007ff6b7004624 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
-0x00007ff6b70024e2 (Unity) AssetVersionBuilder::BuildAssetVersion
-0x00007ff6b6fdcdcd (Unity) CreateAssetVersionBuilder
-0x00007ff6b6fe3605 (Unity) ImportToObjects
-0x00007ff6b6fe2458 (Unity) ImportAsset
-0x00007ff6b6f7c998 (Unity) AssetImportWorker::Import
-0x00007ff6b6fa203a (Unity) <lambda_4a0f5575432e8e69ec585d1ca7897980>::operator()
-0x00007ff6b70295a2 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
-0x00007ff6b702b700 (Unity) asio::detail::win_iocp_io_service::do_one
-0x00007ff6b702ee7e (Unity) asio::io_service::run
-0x00007ff6b6fcab9b (Unity) RunAssetImportWorkerClientV2
-0x00007ff6b6fcabf0 (Unity) RunAssetImporterV2
-0x00007ff6b6a723dd (Unity) Application::InitializeProject
-0x00007ff6b6ec7252 (Unity) WinMain
-0x00007ff6b8555752 (Unity) __scrt_common_main_seh
-0x00007ffd8dc07034 (KERNEL32) BaseThreadInitThunk
-0x00007ffd8f142651 (ntdll) RtlUserThreadStart
+  path: Assets/flappy-bird-assets-master/sprites/pipe-red.png
+  artifactKey: Guid(71f1c329f33814245bd1858c8dbf3999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/pipe-red.png using Guid(71f1c329f33814245bd1858c8dbf3999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23cd8ffe6ae16ecad076fefee0350538') in 0.767552 seconds 
+  Import took 0.776663 seconds .
 
-  Import took 10.331895 seconds .
+========================================================================
+Received Import Request.
+  Time since last request: 0.010569 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/background-day.png
+  artifactKey: Guid(403c92a1a981636499770eef6506f5ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/background-day.png using Guid(403c92a1a981636499770eef6506f5ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c73c0fcc12851f35a320d2ab7a9de95') in 0.108143 seconds 
+  Import took 0.133299 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001802 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/gameover.png
+  artifactKey: Guid(f60a04bc18a20144a80ad6de36317fad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/gameover.png using Guid(f60a04bc18a20144a80ad6de36317fad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbcd733c23a7fc3f62e16994e4152dff') in 0.063217 seconds 
+  Import took 0.074381 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001099 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/1.png
+  artifactKey: Guid(ffa2480b955d2b14799214f512923bc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/1.png using Guid(ffa2480b955d2b14799214f512923bc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75305248a379de9163a5e8598cfbb96e') in 0.073232 seconds 
+  Import took 0.087182 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000655 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/yellowbird-downflap.png
+  artifactKey: Guid(22521e39a1cc33f4193a704bbce87fde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/yellowbird-downflap.png using Guid(22521e39a1cc33f4193a704bbce87fde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc4e54fa04e4bc4f031b8dd76ff2d657') in 0.040940 seconds 
+  Import took 0.047563 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000662 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/redbird-midflap.png
+  artifactKey: Guid(ab2cc63dea6066f4ea6ffb97da073733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/redbird-midflap.png using Guid(ab2cc63dea6066f4ea6ffb97da073733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd52fc623f2e69286815805cd66bca812') in 0.219983 seconds 
+  Import took 0.227510 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000585 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/yellowbird-midflap.png
+  artifactKey: Guid(4fd6f41229bfc7649a8a48d076911313) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/yellowbird-midflap.png using Guid(4fd6f41229bfc7649a8a48d076911313) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba0b08820f75ea93e7d363ec2cef6c72') in 0.026293 seconds 
+  Import took 0.033731 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000723 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/3.png
+  artifactKey: Guid(3e9f9768f9c1ec44880746c9b0547be3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/3.png using Guid(3e9f9768f9c1ec44880746c9b0547be3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd0c75e951b488e8c3eef9e0059ecd60') in 0.039262 seconds 
+  Import took 0.151258 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010513 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/4.png
+  artifactKey: Guid(eca10895e7484a440b40848d30298809) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/4.png using Guid(eca10895e7484a440b40848d30298809) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '922d5a4cdb678a7bb4dc69d8e630cbf3') in 0.032932 seconds 
+  Import took 0.067824 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001033 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/bomb 1.png
+  artifactKey: Guid(6591914afcc871742b94dacaaac1c031) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/bomb 1.png using Guid(6591914afcc871742b94dacaaac1c031) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2826117884d9007bdeaca779e466ba45') in 0.248616 seconds 
+  Import took 0.257253 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000672 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/base.png
+  artifactKey: Guid(5a6a4b1cf57526a4ebf1b39950e2baf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/base.png using Guid(5a6a4b1cf57526a4ebf1b39950e2baf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '774139ffa2718cdf39a3c1d621db859f') in 0.209118 seconds 
+  Import took 0.231725 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008092 seconds.
+  path: Assets/flappy-bird-assets-master/audio
+  artifactKey: Guid(9d1ff8be60215bb49bbca6662e00159f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/audio using Guid(9d1ff8be60215bb49bbca6662e00159f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ec6f8a7ecfdb106220c4727790a3785') in 0.020567 seconds 
+  Import took 0.030138 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000788 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/message.png
+  artifactKey: Guid(ef9f81e1c235c5746b6206a46ce89920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/message.png using Guid(ef9f81e1c235c5746b6206a46ce89920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35a925300cf6baddc71573bf50e03a5b') in 0.228307 seconds 
+  Import took 0.237211 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000598 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/9.png
+  artifactKey: Guid(90df6d465e7db734db3eba8a64b05e32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/9.png using Guid(90df6d465e7db734db3eba8a64b05e32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f61c8db13c8910556327c87e1d30f763') in 0.052474 seconds 
+  Import took 0.114247 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004784 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/0.png
+  artifactKey: Guid(9e689d9865361f8418c1c4a4128dbbef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/0.png using Guid(9e689d9865361f8418c1c4a4128dbbef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b273d58a8e8663729cd035dccd8768e8') in 0.061285 seconds 
+  Import took 0.136394 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000946 seconds.
+  path: Assets/flappy-bird-assets-master/screenshot.png
+  artifactKey: Guid(a4c0a2d9df39eec4abd751a5f8f48c77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/screenshot.png using Guid(a4c0a2d9df39eec4abd751a5f8f48c77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34704dd60bb3686bef295deec9d6ef9e') in 0.235395 seconds 
+  Import took 0.244120 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000789 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/59894.png
+  artifactKey: Guid(2f4f25080ac346549a054f6b415e3702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/59894.png using Guid(2f4f25080ac346549a054f6b415e3702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8598f08fc85950770563225c6a58309b') in 1.773411 seconds 
+  Import took 1.804812 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000671 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/background-night.png
+  artifactKey: Guid(b5825de7ccd76fe4180fc97433654017) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/background-night.png using Guid(b5825de7ccd76fe4180fc97433654017) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '270f9773e2a3f6e0b214ae74380789a0') in 0.063660 seconds 
+  Import took 0.102701 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002442 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/bluebird-midflap.png
+  artifactKey: Guid(5832e8c1c797ca34ea368f1ba4f21c6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/bluebird-midflap.png using Guid(5832e8c1c797ca34ea368f1ba4f21c6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '360de45be73e7cb2e6ab1f8e5c9f2e50') in 0.109405 seconds 
+  Import took 0.138235 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000845 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/bluebird-upflap.png
+  artifactKey: Guid(56589aa08455dda42a8ead8defb542e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/bluebird-upflap.png using Guid(56589aa08455dda42a8ead8defb542e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccb344d30cb9ab0322b8546e6451a14b') in 0.089240 seconds 
+  Import took 0.139413 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003102 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/2.png
+  artifactKey: Guid(e2c341e2568ca3d46b118520a77355d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/2.png using Guid(e2c341e2568ca3d46b118520a77355d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0498e7d78deefa45bfa59222d389fe7a') in 0.098945 seconds 
+  Import took 0.124567 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002807 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/bomb.png
+  artifactKey: Guid(ab56ba9b9e249834b98567769ba39b63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/bomb.png using Guid(ab56ba9b9e249834b98567769ba39b63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80bbd59fb97df4ad974acebc05eb03a1') in 0.156500 seconds 
+  Import took 0.170692 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001238 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/pipe-green.png
+  artifactKey: Guid(f675370990935c34b9c94b94d1f3dc40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/pipe-green.png using Guid(f675370990935c34b9c94b94d1f3dc40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72b2cbbfc21b66f3add66ae3239c0e3a') in 0.038416 seconds 
+  Import took 0.068141 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000684 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/redbird-upflap.png
+  artifactKey: Guid(9d6af9115f4177d41a8b1cc1c8ad20ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/redbird-upflap.png using Guid(9d6af9115f4177d41a8b1cc1c8ad20ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'beabbb5b532a401df886435756f85fd6') in 0.037664 seconds 
+  Import took 0.053778 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000593 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/yellowbird-upflap.png
+  artifactKey: Guid(18758213ee02b334eb162be362c630c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/yellowbird-upflap.png using Guid(18758213ee02b334eb162be362c630c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '536ef9430642a556b370775c00dcef0e') in 0.117139 seconds 
+  Import took 0.154092 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001073 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/redbird-downflap.png
+  artifactKey: Guid(4ec91ef48250f4c46b87de2e63d0b250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/redbird-downflap.png using Guid(4ec91ef48250f4c46b87de2e63d0b250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6eb598264bbc66ded360c09d539c68f') in 0.038902 seconds 
+  Import took 0.048586 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000676 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/8.png
+  artifactKey: Guid(33ce0f22aec0b6f44b94d70769b5d790) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/8.png using Guid(33ce0f22aec0b6f44b94d70769b5d790) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b626f01984a11d4b27ca85d952d6494') in 0.052071 seconds 
+  Import took 0.085112 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001172 seconds.
+  path: Assets/flappy-bird-assets-master/sprites
+  artifactKey: Guid(2cf42c0a216adca47b70124a863bf9e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites using Guid(2cf42c0a216adca47b70124a863bf9e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7078b70527a12e2ec0b0b4970f5ace80') in 0.104818 seconds 
+  Import took 0.133007 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000910 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/7.png
+  artifactKey: Guid(0dea7d66e2f373d43ac791eb9432bf28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/7.png using Guid(0dea7d66e2f373d43ac791eb9432bf28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff85b248ed5740fb028c9c5ff13595b8') in 0.035646 seconds 
+  Import took 0.047030 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000775 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/bluebird-downflap.png
+  artifactKey: Guid(57be70afbcffa5445a3a82714d38c0e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/bluebird-downflap.png using Guid(57be70afbcffa5445a3a82714d38c0e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d2c049379166c3614d2511300981d26') in 0.035896 seconds 
+  Import took 0.045638 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001475 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/6.png
+  artifactKey: Guid(7a5562a9e01bce34d8f925cf0eee8a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/6.png using Guid(7a5562a9e01bce34d8f925cf0eee8a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8c5a8112b831b85cf131f122cdd04d3') in 0.058481 seconds 
+  Import took 0.070414 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000769 seconds.
+  path: Assets/flappy-bird-assets-master/sprites/5.png
+  artifactKey: Guid(85b6ea954696a7f419f3074b1ace8095) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/flappy-bird-assets-master/sprites/5.png using Guid(85b6ea954696a7f419f3074b1ace8095) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b697599d6c62be6d72bfd45d74ffdda3') in 0.042179 seconds 
+  Import took 0.058498 seconds .
 
