@@ -998,8 +998,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: -847}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 3.9655, y: -5.1365}
+  m_SizeDelta: {x: 1062.7256, y: 2409.0764}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1185692785
 MonoBehaviour:
@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1404,6 +1404,7 @@ MonoBehaviour:
   player: {fileID: 1988767011}
   ThisRunPoints: 0
   points: {fileID: 2046781120}
+  highScores: 
   endPoints: {fileID: 1624839566}
   bombs: {fileID: 972557383}
   WhilePlayingObjectUI: {fileID: 169532826}
@@ -1707,7 +1708,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.17
+  m_Radius: 0.1
 --- !u!50 &1988767010
 Rigidbody2D:
   serializedVersion: 4
@@ -1728,7 +1729,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1988767011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2008,9 +2009,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 927948392}
     m_Modifications:
-    - target: {fileID: 5860627938492426500, guid: 1f9ffe9559ef24f45a7a75f40e6cf2db, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
+    - target: {fileID: 1604951313648074712, guid: 1f9ffe9559ef24f45a7a75f40e6cf2db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.47
       objectReference: {fileID: 0}
     - target: {fileID: 7092317785038372760, guid: 1f9ffe9559ef24f45a7a75f40e6cf2db, type: 3}
       propertyPath: m_RootOrder
@@ -2060,17 +2061,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: pipe-green simple
       objectReference: {fileID: 0}
-    - target: {fileID: 7092317785038372762, guid: 1f9ffe9559ef24f45a7a75f40e6cf2db, type: 3}
-      propertyPath: m_TagString
-      value: pipeScore
-      objectReference: {fileID: 0}
-    - target: {fileID: 7092317785212910295, guid: 1f9ffe9559ef24f45a7a75f40e6cf2db, type: 3}
-      propertyPath: m_TagString
-      value: pipeMistake
-      objectReference: {fileID: 0}
-    - target: {fileID: 8387692265011691085, guid: 1f9ffe9559ef24f45a7a75f40e6cf2db, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
+    - target: {fileID: 7190929735046083423, guid: 1f9ffe9559ef24f45a7a75f40e6cf2db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f9ffe9559ef24f45a7a75f40e6cf2db, type: 3}

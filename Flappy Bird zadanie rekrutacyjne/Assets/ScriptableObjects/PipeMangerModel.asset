@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c840d532b3f4db5489885738196af9ad, type: 3}
   m_Name: PipeMangerModel
   m_EditorClassIdentifier: 
-  DistanceBetweenObjectsX: 5
-  HeightObjectsY: 3
+  DistanceBetweenObjectsX: 3
+  HeightObjectsY: 2
   Prefabs:
   - {fileID: 7092317785038372762, guid: 1f9ffe9559ef24f45a7a75f40e6cf2db, type: 3}
   maxPipesInScene: 20
