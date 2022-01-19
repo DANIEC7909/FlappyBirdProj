@@ -12,7 +12,11 @@ public class GameManager : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  
+=======
+    [SerializeField] TextMeshProUGUI[] highestPointsUGUI= new TextMeshProUGUI[5];
+>>>>>>> parent of 025f7aa (Update GameManager.cs)
 =======
     [SerializeField] TextMeshProUGUI[] highestPointsUGUI= new TextMeshProUGUI[5];
 >>>>>>> parent of 025f7aa (Update GameManager.cs)
@@ -22,6 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] static List<int> HighScores;
     [SerializeField] List<int>nonHighScores;
   
+<<<<<<< HEAD
 =======
     [SerializeField] TextMeshProUGUI endPoints;
     [SerializeField] TextMeshProUGUI bombs;
@@ -34,6 +39,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject WhilePlayingObjectUI;
 
 >>>>>>> parent of 63a124a (poprawki)
+=======
+>>>>>>> parent of 025f7aa (Update GameManager.cs)
     public static bool _StartGame;
     #region GameOverVars
     [SerializeField]GameObject GameOverObjectUI;
@@ -47,11 +54,15 @@ public class GameManager : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      
 =======
 >>>>>>> parent of 63a124a (poprawki)
 =======
 >>>>>>> parent of 63a124a (poprawki)
+=======
+        HighScores = new List<int>();
+>>>>>>> parent of 025f7aa (Update GameManager.cs)
 =======
         HighScores = new List<int>();
 >>>>>>> parent of 025f7aa (Update GameManager.cs)
@@ -78,6 +89,7 @@ public class GameManager : MonoBehaviour
             if (WhilePlayingObjectUI.active == true) WhilePlayingObjectUI.SetActive(false);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if(GameOverObjectUI.active  == false) GameOverObjectUI.SetActive(true);
 =======
            if(GameOverObjectUI.active==false) GameOverObjectUI.SetActive(true);
@@ -87,6 +99,8 @@ public class GameManager : MonoBehaviour
 
 >>>>>>> parent of 63a124a (poprawki)
 =======
+=======
+>>>>>>> parent of 025f7aa (Update GameManager.cs)
            if(GameOverObjectUI.active==false) GameOverObjectUI.SetActive(true);
          
            
@@ -112,6 +126,9 @@ public class GameManager : MonoBehaviour
           
 
 
+<<<<<<< HEAD
+>>>>>>> parent of 025f7aa (Update GameManager.cs)
+=======
 >>>>>>> parent of 025f7aa (Update GameManager.cs)
         }
         else
