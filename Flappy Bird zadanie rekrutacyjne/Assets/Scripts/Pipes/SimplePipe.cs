@@ -15,6 +15,6 @@ public class SimplePipe : MonoBehaviour
     public void DestroyByBomb()
     {
         PipeManager.DestroyPipeAndSpawnNewOneByBomb(this);
-        Debug.LogWarning    ("Destroyed by bomb");
+       
     }
 }

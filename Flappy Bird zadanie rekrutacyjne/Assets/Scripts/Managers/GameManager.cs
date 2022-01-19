@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Linq;
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField] PlayerController player;
@@ -10,7 +12,7 @@ public class GameManager : MonoBehaviour
     int counter;
     [SerializeField] TextMeshProUGUI points;
 
- 
+    [SerializeField] List<int> highScores = new List<int>();
     [SerializeField] TextMeshProUGUI endPoints;
     [SerializeField] TextMeshProUGUI bombs;
     [SerializeField] GameObject WhilePlayingObjectUI;
@@ -49,6 +51,25 @@ public class GameManager : MonoBehaviour
 
             if(GameOverObjectUI.active  == false) GameOverObjectUI.SetActive(true);
 
+            //scores stuff
+            if (!highScores.Contains(ThisRunPoints))
+            {
+                if (highScores.Count > 0)
+                {
+                    if (ThisRunPoints > highScores.Max())
+                    {
+                        if (highScores.Count >= 5)
+                        {
+                            highScores.Remove(highScores.Min());
+                        }
+                        highScores.Add(ThisRunPoints);
+                    }
+                }
+                else
+                {
+                    highScores.Add(ThisRunPoints);
+                }
+            }
         }
         else
         {
