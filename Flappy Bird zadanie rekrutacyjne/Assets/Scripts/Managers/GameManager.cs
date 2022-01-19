@@ -3,30 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-using System.Linq;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] PlayerController player;
     public  int ThisRunPoints;
     int counter;
     [SerializeField] TextMeshProUGUI points;
+<<<<<<< HEAD
  
     [SerializeField] TextMeshProUGUI endPoints;
     [SerializeField] TextMeshProUGUI bombs;
     [SerializeField] GameObject WhilePlayingObjectUI;
   
   
+=======
+    [SerializeField] TextMeshProUGUI endPoints;
+    [SerializeField] TextMeshProUGUI bombs;
+    [SerializeField] GameObject WhilePlayingObjectUI;
+
+>>>>>>> parent of 63a124a (poprawki)
     public static bool _StartGame;
     #region GameOverVars
     [SerializeField]GameObject GameOverObjectUI;
     #endregion
-    
+
     private void Start()
     {
         ThisRunPoints = 0;
         player.OnPlayerScored += Player_OnPlayerScored;
         _StartGame = false;
+<<<<<<< HEAD
      
+=======
+>>>>>>> parent of 63a124a (poprawki)
     }
 
     private void Player_OnPlayerScored()
@@ -41,8 +50,17 @@ public class GameManager : MonoBehaviour
        
         if (!PlayerController._PlayerAlive)
         {
+            //game failed 
             if (WhilePlayingObjectUI.active == true) WhilePlayingObjectUI.SetActive(false);
+<<<<<<< HEAD
             if(GameOverObjectUI.active  == false) GameOverObjectUI.SetActive(true);
+=======
+           if(GameOverObjectUI.active==false) GameOverObjectUI.SetActive(true);
+     //       SceneManager.LoadScene(0);    //<temp
+
+            //save points etc.
+
+>>>>>>> parent of 63a124a (poprawki)
         }
         else
         {
