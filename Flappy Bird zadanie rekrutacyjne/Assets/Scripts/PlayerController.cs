@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
                         Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, model.SizeOfArea);
                         if (col != null)
                         {
+                            bool decBombCount = false ;
                             Debug.Log("How much colliders in array:" + col.Length);
                             foreach (Collider2D coll in col)
                             {
@@ -76,7 +77,10 @@ public class PlayerController : MonoBehaviour
                                 {
                                     Debug.Log("colider is :" + coll.transform.name);
                                     coll.GetComponentInParent<SimplePipe>().DestroyByBomb();
-                                    bombsCount--;
+                                    if (!decBombCount) {
+                                        bombsCount--;
+                                        decBombCount = true;
+                                    }                                 
                                 }
                             }
                         }
