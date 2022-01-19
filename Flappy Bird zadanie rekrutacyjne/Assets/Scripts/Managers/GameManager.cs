@@ -10,12 +10,19 @@ public class GameManager : MonoBehaviour
     int counter;
     [SerializeField] TextMeshProUGUI points;
 <<<<<<< HEAD
+<<<<<<< HEAD
  
     [SerializeField] TextMeshProUGUI endPoints;
     [SerializeField] TextMeshProUGUI bombs;
     [SerializeField] GameObject WhilePlayingObjectUI;
   
   
+=======
+    [SerializeField] TextMeshProUGUI endPoints;
+    [SerializeField] TextMeshProUGUI bombs;
+    [SerializeField] GameObject WhilePlayingObjectUI;
+
+>>>>>>> parent of 63a124a (poprawki)
 =======
     [SerializeField] TextMeshProUGUI endPoints;
     [SerializeField] TextMeshProUGUI bombs;
@@ -33,7 +40,10 @@ public class GameManager : MonoBehaviour
         player.OnPlayerScored += Player_OnPlayerScored;
         _StartGame = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
      
+=======
+>>>>>>> parent of 63a124a (poprawki)
 =======
 >>>>>>> parent of 63a124a (poprawki)
     }
