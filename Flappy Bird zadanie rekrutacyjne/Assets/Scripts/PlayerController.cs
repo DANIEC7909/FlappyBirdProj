@@ -72,15 +72,17 @@ public class PlayerController : MonoBehaviour
                             Debug.Log("How much colliders in array:" + col.Length);
                             foreach (Collider2D coll in col)
                             {
-                                if (coll.CompareTag("pipeScore"))
+                                /*if (coll.CompareTag("pipeScore"))
                                 {
                                     coll.GetComponent<SimplePipe>().DestroyByBomb();
                                     Debug.Log("colider is :" + coll.transform.name);
-                                }
-                                else if (coll.CompareTag("pipeMistake"))
+                                    bombsCount--;
+                                }*/
+                               /*else*/ if (coll.CompareTag("pipeMistake"))
                                 {
                                     Debug.Log("colider is :" + coll.transform.name);
                                     coll.GetComponentInParent<SimplePipe>().DestroyByBomb();
+                                    bombsCount--;
                                 }
                             }
                         }
