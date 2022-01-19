@@ -52,7 +52,10 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (WhilePlayingObjectUI.active == false) WhilePlayingObjectUI.SetActive(true);
+            if (_StartGame)
+            {
+                if (WhilePlayingObjectUI.active == false) WhilePlayingObjectUI.SetActive(true);
+            }
         }
         if (counter >= 10)
         {

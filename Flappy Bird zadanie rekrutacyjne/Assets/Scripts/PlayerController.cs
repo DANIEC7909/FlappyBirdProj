@@ -21,17 +21,17 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb=GetComponent<Rigidbody2D>();
+        _PlayerAlive = true;
     }
     private void Start()
     {
-        _PlayerAlive = true;
        
     }
     public void Move()
     {
         if (GameManager._StartGame)
         {
-            rb.velocity = Vector2.up * model.ForceMultiplayerUp;
+            rb.velocity = Vector2.up * model.ForceMultiplayerUp*Time.deltaTime;
             taps++;
         }
     }
@@ -66,16 +66,17 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("double tap");
                     if (bombsCount > 0)
                     {
-                        Collider2D col = Physics2D.OverlapBox(transform.position, new Vector2(model.SizeOfArea, model.SizeOfArea), 0);
+                        Collider2D col = Physics2D.OverlapCircle(transform.position, model.SizeOfArea, 0);
                         if (col != null)
                         {
-                            Debug.Log("colider is :" + col.transform.name);
                             if (col.CompareTag("pipeScore"))
                             {
                                 col.GetComponent<SimplePipe>().DestroyByBomb();
+                            Debug.Log("colider is :" + col.transform.name);
                             }
                             else if (col.CompareTag("pipeMistake"))
                             {
+                            Debug.Log("colider is :" + col.transform.name);
                                 col.transform.GetComponentInParent<SimplePipe>().DestroyByBomb();
                             }
                         }
@@ -92,13 +93,17 @@ public class PlayerController : MonoBehaviour
         {
             OnPlayerScored?.Invoke();
         }
-        else if (collision.CompareTag("pipeMistake"))
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+         if (collision.collider.CompareTag("pipeMistake"))
         {
             _PlayerAlive = false;
         }
     }
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(transform.position, new Vector3(model.SizeOfArea, model.SizeOfArea));
+        Gizmos.DrawWireSphere(transform.position, model.SizeOfArea);
     }
 }
