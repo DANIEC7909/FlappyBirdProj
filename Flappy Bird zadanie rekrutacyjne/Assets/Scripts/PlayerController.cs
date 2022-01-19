@@ -21,17 +21,17 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb=GetComponent<Rigidbody2D>();
+        _PlayerAlive = true;
     }
     private void Start()
     {
-        _PlayerAlive = true;
        
     }
     public void Move()
     {
         if (GameManager._StartGame)
         {
-            rb.velocity = Vector2.up * model.ForceMultiplayerUp;
+            rb.velocity = Vector2.up * model.ForceMultiplayerUp*Time.deltaTime;
             taps++;
         }
     }
@@ -66,17 +66,22 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("double tap");
                     if (bombsCount > 0)
                     {
-                        Collider2D col = Physics2D.OverlapBox(transform.position, new Vector2(model.SizeOfArea, model.SizeOfArea), 0);
+                        Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, model.SizeOfArea);
                         if (col != null)
                         {
-                            Debug.Log("colider is :" + col.transform.name);
-                            if (col.CompareTag("pipeScore"))
+                            bool decBombCount = false ;
+                            Debug.Log("How much colliders in array:" + col.Length);
+                            foreach (Collider2D coll in col)
                             {
-                                col.GetComponent<SimplePipe>().DestroyByBomb();
-                            }
-                            else if (col.CompareTag("pipeMistake"))
-                            {
-                                col.transform.GetComponentInParent<SimplePipe>().DestroyByBomb();
+                                if (coll.CompareTag("pipeMistake"))
+                                {
+                                    Debug.Log("colider is :" + coll.transform.name);
+                                    coll.GetComponentInParent<SimplePipe>().DestroyByBomb();
+                                    if (!decBombCount) {
+                                        bombsCount--;
+                                        decBombCount = true;
+                                    }                                 
+                                }
                             }
                         }
                     }
@@ -97,8 +102,9 @@ public class PlayerController : MonoBehaviour
             _PlayerAlive = false;
         }
     }
+    
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(transform.position, new Vector3(model.SizeOfArea, model.SizeOfArea));
+        Gizmos.DrawWireSphere(transform.position, model.SizeOfArea);
     }
 }
