@@ -22,7 +22,8 @@ public class PipeManager : MonoBehaviour
     private void Start()
     {
         calculatedTilePos= firstTile.position;
-        _firstTile = firstTile;_pipes.Clear();
+        _firstTile = firstTile;
+        _pipes.Clear();
     }
     public static void DestroyPipeAndSpawnNewOne(SimplePipe sp)
     {

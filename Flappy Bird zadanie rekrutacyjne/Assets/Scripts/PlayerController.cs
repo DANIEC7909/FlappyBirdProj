@@ -66,18 +66,22 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("double tap");
                     if (bombsCount > 0)
                     {
-                        Collider2D col = Physics2D.OverlapCircle(transform.position, model.SizeOfArea, 0);
+                        Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, model.SizeOfArea);
                         if (col != null)
                         {
-                            if (col.CompareTag("pipeScore"))
+                            Debug.Log("How much colliders in array:" + col.Length);
+                            foreach (Collider2D coll in col)
                             {
-                                col.GetComponent<SimplePipe>().DestroyByBomb();
-                            Debug.Log("colider is :" + col.transform.name);
-                            }
-                            else if (col.CompareTag("pipeMistake"))
-                            {
-                            Debug.Log("colider is :" + col.transform.name);
-                                col.transform.GetComponentInParent<SimplePipe>().DestroyByBomb();
+                                if (coll.CompareTag("pipeScore"))
+                                {
+                                    coll.GetComponent<SimplePipe>().DestroyByBomb();
+                                    Debug.Log("colider is :" + coll.transform.name);
+                                }
+                                else if (coll.CompareTag("pipeMistake"))
+                                {
+                                    Debug.Log("colider is :" + coll.transform.name);
+                                    coll.GetComponentInParent<SimplePipe>().DestroyByBomb();
+                                }
                             }
                         }
                     }
@@ -93,15 +97,12 @@ public class PlayerController : MonoBehaviour
         {
             OnPlayerScored?.Invoke();
         }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-         if (collision.collider.CompareTag("pipeMistake"))
+        else if (collision.CompareTag("pipeMistake"))
         {
             _PlayerAlive = false;
         }
     }
+    
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, model.SizeOfArea);
