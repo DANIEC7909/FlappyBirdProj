@@ -16,3 +16,8 @@ MonoBehaviour:
   ForceMultiplayerTowards: 4
   SizeOfArea: 3.76
   doubleClickTime: 1
+  clips:
+  - {fileID: 8300000, guid: c5fb3750d917745489cb6106ba6c62af, type: 3}
+  - {fileID: 8300000, guid: 15b37b1de381e414d84c972db5434e19, type: 3}
+  - {fileID: 8300000, guid: 8c37dbbf787f05b4ebb857d0b634f89a, type: 3}
+  - {fileID: 8300000, guid: 79ad4a01370e9954da97269b22a6a7da, type: 3}

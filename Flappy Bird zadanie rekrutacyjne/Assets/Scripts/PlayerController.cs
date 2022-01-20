@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector2.up * model.ForceMultiplayerUp*Time.deltaTime;
             taps++;
-            aS.clip = model.clips[4];
+            aS.clip = model.clips[3];
             aS.Play();
         }
     }
