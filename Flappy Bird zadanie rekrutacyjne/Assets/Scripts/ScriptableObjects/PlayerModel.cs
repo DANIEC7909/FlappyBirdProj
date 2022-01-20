@@ -13,5 +13,6 @@ namespace Models
         /// </summary>
         public float SizeOfArea;
         public float doubleClickTime = 1f;
+        public AudioClip[] clips;
     }
 }

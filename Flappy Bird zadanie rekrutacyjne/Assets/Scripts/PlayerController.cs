@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     PlayerModel model;
     Rigidbody2D rb;
+    [SerializeField] AudioSource aS;
+   [SerializeField] AudioSource aScore;
+    bool audioIsdead;
     public static bool _PlayerAlive=true;
     #region timer
     [SerializeField] float timer;
@@ -22,6 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         rb=GetComponent<Rigidbody2D>();
         _PlayerAlive = true;
+        audioIsdead = false;
     }
     private void Start()
     {
@@ -33,6 +37,8 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector2.up * model.ForceMultiplayerUp*Time.deltaTime;
             taps++;
+            aS.clip = model.clips[4];
+            aS.Play();
         }
     }
     private void FixedUpdate()
@@ -80,6 +86,8 @@ public class PlayerController : MonoBehaviour
                                     if (!decBombCount) {
                                         bombsCount--;
                                         decBombCount = true;
+                                        aS.clip = model.clips[1];
+                                        aS.Play();
                                     }                                 
                                 }
                             }
@@ -96,10 +104,22 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("pipeScore"))
         {
             OnPlayerScored?.Invoke();
-        }
+            if (!audioIsdead)
+            {
+                aScore.clip = model.clips[2];
+                aScore.Play();
+                
+            }
+        }      
         else if (collision.CompareTag("pipeMistake"))
         {
             _PlayerAlive = false;
+            if (!audioIsdead)
+            {
+                aScore.clip = model.clips[0];
+                aScore.Play();
+                audioIsdead = true;
+            }
         }
     }
     
