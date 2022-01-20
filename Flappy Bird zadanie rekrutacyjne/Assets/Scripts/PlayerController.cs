@@ -101,17 +101,20 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("pipeScore"))
+        if (_PlayerAlive)
         {
-            OnPlayerScored?.Invoke();
-            if (!audioIsdead)
+            if (collision.CompareTag("pipeScore"))
             {
-                aScore.clip = model.clips[2];
-                aScore.Play();
-                
+                OnPlayerScored?.Invoke();
+                if (!audioIsdead)
+                {
+                    aScore.clip = model.clips[2];
+                    aScore.Play();
+
+                }
             }
-        }      
-        else if (collision.CompareTag("pipeMistake"))
+        }
+        if (collision.CompareTag("pipeMistake"))
         {
             _PlayerAlive = false;
             if (!audioIsdead)

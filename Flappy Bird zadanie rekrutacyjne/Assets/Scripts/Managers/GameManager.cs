@@ -11,15 +11,16 @@ public class GameManager : MonoBehaviour
     public  int ThisRunPoints;
     int counter;
     [SerializeField] TextMeshProUGUI points;
-
-    [SerializeField] List<int> highScores = new List<int>();
+    
+    
     [SerializeField] TextMeshProUGUI endPoints;
     [SerializeField] TextMeshProUGUI bombs;
+    [SerializeField] TextMeshProUGUI[] highScoresUI;
     [SerializeField] GameObject WhilePlayingObjectUI;
-  
-  
 
-
+    SaveScore saveMachine;
+   [SerializeField] List<int> loadedData;
+    bool saveDataOnlyOnce=true;
 
     public static bool _StartGame;
     #region GameOverVars
@@ -31,7 +32,12 @@ public class GameManager : MonoBehaviour
         ThisRunPoints = 0;
         player.OnPlayerScored += Player_OnPlayerScored;
         _StartGame = false;
-
+        saveMachine = new SaveScore();
+        if (saveMachine.LoadScores() != null)
+        {
+            loadedData=saveMachine.LoadScores();
+        }
+        saveDataOnlyOnce = true;
     }
 
     private void Player_OnPlayerScored()
@@ -43,33 +49,54 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-       
+
+
+
         if (!PlayerController._PlayerAlive)
         {
             //game failed 
             if (WhilePlayingObjectUI.active == true) WhilePlayingObjectUI.SetActive(false);
 
-            if(GameOverObjectUI.active  == false) GameOverObjectUI.SetActive(true);
-
-            //scores stuff
-            if (!highScores.Contains(ThisRunPoints))
-            {
-                if (highScores.Count > 0)
+            if (GameOverObjectUI.active == false) GameOverObjectUI.SetActive(true);
+            if (saveDataOnlyOnce) { 
+                if (saveMachine.LoadScores() != null)
                 {
-                    if (ThisRunPoints > highScores.Max())
+                    loadedData = saveMachine.LoadScores();
+                }
+                //scores stuff
+                if (!loadedData.Contains(ThisRunPoints))
+                {
+                    if (loadedData.Count > 0)
                     {
-                        if (highScores.Count >= 5)
+                        if (ThisRunPoints > loadedData.Max())
                         {
-                            highScores.Remove(highScores.Min());
+                            saveMachine.saveScores(ThisRunPoints);
+                            Debug.Log("NEW HIGH SCORE " + ThisRunPoints);
                         }
-                        highScores.Add(ThisRunPoints);
                     }
+                    else
+                    {
+                        saveMachine.saveScores(ThisRunPoints); //this piece can be run only once.
+                    }
+                    List<int> localHighScore = new List<int>();
+                    for (int i = 0; i < 5; i++)
+                    {
+                        if (loadedData.Count > 0)
+                        {
+                            int MaxNum = loadedData.Max();
+                            //localHighScore.Add(MaxNum);
+                            highScoresUI[i].text = i+". "+MaxNum.ToString();
+                            loadedData.Remove(MaxNum);
+
+                            Debug.Log("maxNum is:" + MaxNum);
+                        }
+                    }
+                 
+
                 }
-                else
-                {
-                    highScores.Add(ThisRunPoints);
-                }
+                saveDataOnlyOnce = false;
             }
+          
         }
         else
         {
