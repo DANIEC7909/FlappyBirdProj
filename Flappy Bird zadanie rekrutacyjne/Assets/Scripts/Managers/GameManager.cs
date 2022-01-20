@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     #endregion
     
     #region saveLoadDataSystem
+    [Space]
     SaveScore saveMachine;
    [SerializeField] List<int> loadedData;
     bool saveDataOnlyOnce=true;
@@ -64,12 +65,10 @@ public class GameManager : MonoBehaviour
             if (WhilePlayingObjectUI.active == true) WhilePlayingObjectUI.SetActive(false);
 
             if (GameOverObjectUI.active == false) GameOverObjectUI.SetActive(true);
-           
-            if (saveDataOnlyOnce) { 
-                if (saveMachine.LoadScores() != null)
-                {
-                    loadedData = saveMachine.LoadScores();
-                }
+
+            if (saveDataOnlyOnce)
+            {
+                loadDataToLoaded();
                 //scores stuff
                 if (!loadedData.Contains(ThisRunPoints))
                 {
@@ -79,13 +78,15 @@ public class GameManager : MonoBehaviour
                         {
                             saveMachine.saveScores(ThisRunPoints);
                             Debug.Log("NEW HIGH SCORE " + ThisRunPoints);
-                            newHighScoreImgUI.SetActive(true);
                         }
                     }
                     else
                     {
                         saveMachine.saveScores(ThisRunPoints); //this piece can be run only once.
+                        Debug.Log("NEW HIGH SCORE " + ThisRunPoints);
+                        newHighScoreImgUI.SetActive(true);
                     }
+                    loadDataToLoaded();
                     List<int> localHighScore = new List<int>();
                     for (int i = 0; i < 5; i++)
                     {
@@ -93,18 +94,18 @@ public class GameManager : MonoBehaviour
                         {
                             int MaxNum = loadedData.Max();
                             localHighScore.Add(MaxNum);
-                            highScoresUI[i].text = i+1+". "+localHighScore[i].ToString();
+                            highScoresUI[i].text = i + 1 + ". " + localHighScore[i].ToString();
                             loadedData.Remove(MaxNum);
 
                             Debug.Log("maxNum is:" + MaxNum);
                         }
                     }
-                 
+
 
                 }
                 saveDataOnlyOnce = false;
             }
-          
+
         }
         else
         {
@@ -125,6 +126,13 @@ public class GameManager : MonoBehaviour
         points.text = ThisRunPoints.ToString();
         endPoints.text = ThisRunPoints.ToString();
         bombs.text = player.bombsCount.ToString();
+    }
+    void loadDataToLoaded()
+    {
+        if (saveMachine.LoadScores() != null)
+        {
+            loadedData = saveMachine.LoadScores();
+        }
     }
    public void PlayAgain()
     {
