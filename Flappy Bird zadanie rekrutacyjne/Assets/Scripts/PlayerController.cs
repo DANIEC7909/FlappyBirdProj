@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+  
     public delegate void Scored();
     public event Scored OnPlayerScored;
     [HideInInspector]
@@ -116,7 +117,8 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.CompareTag("pipeMistake"))
         {
-            _PlayerAlive = false;
+                _PlayerAlive = false;
+            
             if (!audioIsdead)
             {
                 aScore.clip = model.clips[0];

@@ -58,3 +58,13 @@ C# parse time         : 659ms
 candidates check time : 169ms
 console write time    : 1ms
 
+[api-updater (non-obsolete-error-filter)] 20.01.2022 22:00:44 : Starting D:/2020.3.25f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 1372,124ms
+moved types parse time: 190ms
+candidates parse time : 36ms
+C# parse time         : 722ms
+candidates check time : 182ms
+console write time    : 1ms
+

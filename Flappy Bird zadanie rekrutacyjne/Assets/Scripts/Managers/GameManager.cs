@@ -78,6 +78,7 @@ public class GameManager : MonoBehaviour
                         {
                             saveMachine.saveScores(ThisRunPoints);
                             Debug.Log("NEW HIGH SCORE " + ThisRunPoints);
+                        newHighScoreImgUI.SetActive(true);
                         }
                     }
                     else
@@ -86,10 +87,11 @@ public class GameManager : MonoBehaviour
                         Debug.Log("NEW HIGH SCORE " + ThisRunPoints);
                         newHighScoreImgUI.SetActive(true);
                     }
-                    loadDataToLoaded();
-                    List<int> localHighScore = new List<int>();
-                    for (int i = 0; i < 5; i++)
-                    {
+                }
+                loadDataToLoaded();
+                List<int> localHighScore = new List<int>();
+                for (int i = 0; i < 5; i++)
+                {
                         if (loadedData.Count > 0)
                         {
                             int MaxNum = loadedData.Max();
@@ -99,10 +101,9 @@ public class GameManager : MonoBehaviour
 
                             Debug.Log("maxNum is:" + MaxNum);
                         }
-                    }
-
-
                 }
+
+
                 saveDataOnlyOnce = false;
             }
 
