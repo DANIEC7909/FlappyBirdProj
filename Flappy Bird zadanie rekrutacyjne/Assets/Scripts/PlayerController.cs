@@ -10,9 +10,10 @@ public class PlayerController : MonoBehaviour
     public event Scored OnPlayerScored;
     [HideInInspector]
     public int bombsCount=1;
+    Rigidbody2D rb;
+
     [SerializeField]
     PlayerModel model;
-    Rigidbody2D rb;
     [SerializeField] AudioSource aS;
    [SerializeField] AudioSource aScore;
     bool audioIsdead;
@@ -28,10 +29,9 @@ public class PlayerController : MonoBehaviour
         _PlayerAlive = true;
         audioIsdead = false;
     }
-    private void Start()
-    {
-       
-    }
+    /// <summary>
+    /// This function is called when player want to move bird.
+    /// </summary>
     public void Move()
     {
         if (GameManager._StartGame)
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager._StartGame)
         {
-            transform.position += Vector3.right * model.ForceMultiplayerTowards * Time.deltaTime;
+            transform.position += Vector3.right * model.ForceMultiplayerTowards * Time.deltaTime; //moves player towards 
         }
     }
     private void Update()
@@ -64,25 +64,24 @@ public class PlayerController : MonoBehaviour
                 timer -= Time.deltaTime;
                 if (timer <= 0)
                 {
-                    Debug.Log("single tap");
                     taps = 0;
                     timer = model.doubleClickTime;
                 }
                 else if (timer > 0 && taps > 1)
                 {
-                    Debug.Log("double tap");
+                   
                     if (bombsCount > 0)
                     {
                         Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, model.SizeOfArea);
                         if (col != null)
                         {
                             bool decBombCount = false ;
-                            Debug.Log("How much colliders in array:" + col.Length);
+                         
                             foreach (Collider2D coll in col)
                             {
                                 if (coll.CompareTag("pipeMistake"))
                                 {
-                                    Debug.Log("colider is :" + coll.transform.name);
+                                   
                                     coll.GetComponentInParent<SimplePipe>().DestroyByBomb();
                                     if (!decBombCount) {
                                         bombsCount--;

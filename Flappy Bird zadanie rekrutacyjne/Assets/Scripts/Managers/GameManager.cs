@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
         saveDataOnlyOnce = true;
         newHighScoreImgUI.SetActive(false);
     }
-
+    //callback
     private void Player_OnPlayerScored()
     {
         ThisRunPoints++;
@@ -59,17 +59,17 @@ public class GameManager : MonoBehaviour
 
 
 
-        if (!PlayerController._PlayerAlive)
+        if (!PlayerController._PlayerAlive)//Game failed.
         {
-            //game failed 
+            
             if (WhilePlayingObjectUI.active == true) WhilePlayingObjectUI.SetActive(false);
 
             if (GameOverObjectUI.active == false) GameOverObjectUI.SetActive(true);
-
+            #region pointsSaveLoad
             if (saveDataOnlyOnce)
             {
                 loadDataToLoaded();
-                //scores stuff
+              
                 if (!loadedData.Contains(ThisRunPoints))
                 {
                     if (loadedData.Count > 0)
@@ -77,14 +77,12 @@ public class GameManager : MonoBehaviour
                         if (ThisRunPoints > loadedData.Max())
                         {
                             saveMachine.saveScores(ThisRunPoints);
-                            Debug.Log("NEW HIGH SCORE " + ThisRunPoints);
                         newHighScoreImgUI.SetActive(true);
                         }
                     }
                     else
                     {
                         saveMachine.saveScores(ThisRunPoints); //this piece can be run only once.
-                        Debug.Log("NEW HIGH SCORE " + ThisRunPoints);
                         newHighScoreImgUI.SetActive(true);
                     }
                 }
@@ -106,15 +104,16 @@ public class GameManager : MonoBehaviour
 
                 saveDataOnlyOnce = false;
             }
-
+            #endregion
         }
-        else
+        else//Game sill runs.
         {
             if (_StartGame)
             {
                 if (WhilePlayingObjectUI.active == false) WhilePlayingObjectUI.SetActive(true);
             }
         }
+        #region Count points to add next bomb to player
         if (counter >= 10)
         {
             counter = 0;
@@ -124,10 +123,16 @@ public class GameManager : MonoBehaviour
         {
             player.bombsCount = 3;
         }
+        #endregion
+        #region update all indicators and all UI visual stuff
         points.text = ThisRunPoints.ToString();
         endPoints.text = ThisRunPoints.ToString();
         bombs.text = player.bombsCount.ToString();
+        #endregion
     }
+    /// <summary>
+    /// Loads data to loadData variable
+    /// </summary>
     void loadDataToLoaded()
     {
         if (saveMachine.LoadScores() != null)
@@ -135,10 +140,16 @@ public class GameManager : MonoBehaviour
             loadedData = saveMachine.LoadScores();
         }
     }
-   public void PlayAgain()
+    /// <summary>
+    ///PlayAgain Load all scene again
+    /// </summary>
+    public void PlayAgain()
     {
         SceneManager.LoadScene(0);
     }
+    /// <summary>
+    /// By this function we starts the game (releses all brakes)
+    /// </summary>
     public void StartGame()
     {
         _StartGame = true;

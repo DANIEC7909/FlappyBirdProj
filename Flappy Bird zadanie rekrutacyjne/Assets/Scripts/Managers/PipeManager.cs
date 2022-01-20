@@ -15,16 +15,18 @@ public class PipeManager : MonoBehaviour
     [SerializeField]
    static List<SimplePipe> _pipes= new List<SimplePipe>();
 
-    private void Awake()
-    {
-        _model = model;
-    }
+  
     private void Start()
     {
+        _model = model;
         calculatedTilePos= firstTile.position;
         _firstTile = firstTile;
         _pipes.Clear();
     }
+    /// <summary>
+    /// This function removes old pipes and spawns new ones when player fly trough.
+    /// </summary>
+    /// <param name="sp">SimplePipe object</param>
     public static void DestroyPipeAndSpawnNewOne(SimplePipe sp)
     {
         if (!_pipes.Contains(sp))
@@ -39,6 +41,10 @@ public class PipeManager : MonoBehaviour
      SimplePipe isp = Instantiate(_model.Prefabs[0],calculatedTilePos,Quaternion.identity).GetComponent<SimplePipe>();
         _pipes.Add(isp);
     }
+    /// <summary>
+    /// This function removes old pipes and spawns new ones when player use bombs.
+    /// </summary>
+    /// <param name="sp">SimplePipe object</param>
     public static void DestroyPipeAndSpawnNewOneByBomb(SimplePipe sp)
     {
             Destroy(sp.gameObject);

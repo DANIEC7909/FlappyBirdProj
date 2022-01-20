@@ -20,7 +20,6 @@ public class SaveScore
         {
             using (StreamWriter sW = File.CreateText(path))
             {
-
                 sW.WriteLine(val);
                 sW.Close();
             }
