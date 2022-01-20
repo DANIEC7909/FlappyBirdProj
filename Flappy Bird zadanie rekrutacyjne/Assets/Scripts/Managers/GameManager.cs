@@ -10,21 +10,26 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerController player;
     public  int ThisRunPoints;
     int counter;
+    public static bool _StartGame;
+    #region GameOverVars
+    [SerializeField]GameObject GameOverObjectUI;
+    #endregion
+    [Space]
+    #region UI
+    [Header("UI's")]
+    [Space]
     [SerializeField] TextMeshProUGUI points;
-    
-    
     [SerializeField] TextMeshProUGUI endPoints;
     [SerializeField] TextMeshProUGUI bombs;
     [SerializeField] TextMeshProUGUI[] highScoresUI;
     [SerializeField] GameObject WhilePlayingObjectUI;
-
+    [SerializeField] GameObject newHighScoreImgUI;
+    #endregion
+    
+    #region saveLoadDataSystem
     SaveScore saveMachine;
    [SerializeField] List<int> loadedData;
     bool saveDataOnlyOnce=true;
-
-    public static bool _StartGame;
-    #region GameOverVars
-    [SerializeField]GameObject GameOverObjectUI;
     #endregion
 
     private void Start()
@@ -38,6 +43,7 @@ public class GameManager : MonoBehaviour
             loadedData=saveMachine.LoadScores();
         }
         saveDataOnlyOnce = true;
+        newHighScoreImgUI.SetActive(false);
     }
 
     private void Player_OnPlayerScored()
@@ -58,6 +64,7 @@ public class GameManager : MonoBehaviour
             if (WhilePlayingObjectUI.active == true) WhilePlayingObjectUI.SetActive(false);
 
             if (GameOverObjectUI.active == false) GameOverObjectUI.SetActive(true);
+           
             if (saveDataOnlyOnce) { 
                 if (saveMachine.LoadScores() != null)
                 {
@@ -72,6 +79,7 @@ public class GameManager : MonoBehaviour
                         {
                             saveMachine.saveScores(ThisRunPoints);
                             Debug.Log("NEW HIGH SCORE " + ThisRunPoints);
+                            newHighScoreImgUI.SetActive(true);
                         }
                     }
                     else
@@ -84,8 +92,8 @@ public class GameManager : MonoBehaviour
                         if (loadedData.Count > 0)
                         {
                             int MaxNum = loadedData.Max();
-                            //localHighScore.Add(MaxNum);
-                            highScoresUI[i].text = i+". "+MaxNum.ToString();
+                            localHighScore.Add(MaxNum);
+                            highScoresUI[i].text = i+1+". "+localHighScore[i].ToString();
                             loadedData.Remove(MaxNum);
 
                             Debug.Log("maxNum is:" + MaxNum);
